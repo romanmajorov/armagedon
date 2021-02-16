@@ -1,21 +1,15 @@
 #!/bin/bash
 clear
-echo "--------------------"
-echo "|     Кто ты ?     |"
-echo "|------------------|"
-echo "| 1. Termux        |"
-echo "| 2. Другой Unix   |"
-echo "| 3. iSH           |"
-echo "|                  |"
-echo "| Введите 1/2/3:   |"
-echo "--------------------"
+echo "Your OS:"
+echo "1) Windows"
+echo "2) Linux\Termux"
 read numb
 if [ $numb = "1" ]
 then
 	pkg install python
 	pkg install dos2unix
 	pip install requests colorama proxyscrape
-	cp ~/spymer/spammer.py $PREFIX/bin/spymer
+	cp ~/armagedon/bomber.py $PREFIX/bin/spymer
 	dos2unix $PREFIX/bin/spymer
 	chmod -R 777 ~/spymer
 	chmod 777 $PREFIX/bin/spymer
@@ -25,7 +19,7 @@ else
 	then
 		if [ "$(whoami)" != 'root' ];
 		then
-			echo "У вас нет прав. Запустите install.sh с root правами (sudo sh ~/spymer/install.sh)"
+			echo "У вас нет прав. Запустите install.sh с root правами (sudo sh ~/armagedon/install.sh)"
 			exit
 		else
 			apt install python3 python3-pip dos2unix
@@ -33,8 +27,8 @@ else
 			cp ~/spymer/spammer.py $PREFIX/bin/spymer
 			dos2unix $RPEFIX/bin/spymer
 			chmod 777 $RPEFIX/bin/spymer
-			chmod -R 777 ~/spymer
-			spymer
+			chmod -R 777 ~/armagedon
+			armagedon
 		fi
 	else
 		if [ $numb = "3" ] 
@@ -48,7 +42,7 @@ else
 			cp ~/spymer/spammer.py /usr/bin/spymer
 			dos2unix /usr/bin/spymer
 			chmod 777 /usr/bin/spymer
-			spymer
+			armagedon
 		else
 			echo "Некорректный ввод"
 		fi
