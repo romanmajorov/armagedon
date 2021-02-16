@@ -1,5 +1,5 @@
 # Armgedon 
 New Powerful Spammer. He took revenge on his enemies))
-# Installation 
+# OC
 Android (Termux)
  
