@@ -682,41 +682,48 @@ def MAIN():
 					info=Back.RED+"\nВерсия устарела и нуждается в обновлении!"+Style.RESET_ALL
 
 			def logo():
-				logo = r+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n░"+g+"██████"+r+"╗"+g+"██████"+r+"╗░"+g+"██"+r+"╗░░░"+g+"██"+r+"╗"+g+"███"+r+"╗░░░"+g+"███"+r+"╗"+g+"███████"+r+"╗"+g+"██████"+r+"╗░\n"+g+"██"+r+"╔════╝"+g+"██"+r+"╔══"+g+"██"+r+"╗╚"+g+"██"+r+"╗░"+g+"██"+r+"╔╝"+g+"████"+r+"╗░"+g+"████"+r+"║"+g+"██"+r+"╔════╝"+g+"██"+r+"╔══"+g+"██"+r+"╗\n"+r+"╚"+g+"█████"+r+"╗░"+g+"██████"+r+"╔╝░"+r+"╚"+g+"████"+r+"╔╝"+r+"░"+g+"██"+r+"╔"+g+"████"+r+"╔"+g+"██"+r+"║"+g+"█████"+r+"╗░░"+g+"██████"+r+"╔╝\n░"+r+"╚═══"+g+"██"+r+"╗"+g+"██"+r+"╔═══╝░░░"+r+"╚"+g+"██"+r+"╔╝░░"+g+"██"+r+"║╚"+g+"██"+r+"╔╝"+g+"██"+r+"║"+g+"██"+r+"╔══╝░░"+g+"██"+r+"╔══"+g+"██"+r+"╗\n"+g+"██████"+r+"╔╝"+g+"██"+r+"║░░░░░░░░"+g+"██"+r+"║░░░"+g+"██"+r+"║░"+r+"╚═╝░"+g+"██"+r+"║"+g+"███████"+r+"╗"+g+"██"+r+"║░░"+g+"██"+r+"║\n"+r+"╚═════╝░"+r+"╚═╝░░░░░░░░"+r+"╚═╝░░░"+r+"╚═╝░░░░░"+r+"╚═╝╚══════╝╚═╝░░"+r+"╚═╝\n░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ "+s+"by FSystem88"+r+" ░░░\n"+y+" [ SMS Spammer ~ v.9.0 ~ MPL-2.0 ]\n [ Dev: FSystem88 ~ prod. by Ca$h&Мир® ]"+s
+				logo = r+"
+╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮
+┃╭━╮┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱┃┃
+┃┃╱┃┣━┳╮╭┳━━┳━━┳━━┳━╯┣━━┳━╮
+┃╰━╯┃╭┫╰╯┃╭╮┃╭╮┃┃━┫╭╮┃╭╮┃╭╮╮
+┃╭━╮┃┃┃┃┃┃╭╮┃╰╯┃┃━┫╰╯┃╰╯┃┃┃┃
+╰╯╱╰┻╯╰┻┻┻╯╰┻━╮┣━━┻━━┻━━┻╯╰╯
+╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯" 
 				print(logo)
 
 			def updateproxy():
 				global proxy
 				global info
 				try:
-					print ("Введите proxy в формате ip:port.")
-					print ("Пример: "+Fore.GREEN+"123.45.6.78:8080"+Style.RESET_ALL)
-					print ("Для отмены нажмите Ctrl+C")
+					print ("Enter the proxy")
+					print ("Exit - Ctrl+C")
 					proxy = input(Fore.BLUE+"spymer > "+Style.RESET_ALL)
 					if proxy == "":
-						info = Fore.RED+"\nНекорректно введены данные!"+Style.RESET_ALL
+						info = Fore.RED+"\nERR!"+Style.RESET_ALL
 						proxy = "localhost"
 					else:
-						print("Проверяю прокси...")
+						print("Loading...")
 						ip = requests.get("http://fsystem88.ru/ip", verify=False, timeout=10).text
 						try:
 							ipx = requests.get("http://fsystem88.ru/ip", proxies={'http': "http://{}".format(proxy), 'https':"http://{}".format(proxy)}, verify=False, timeout=10).text
 						except:
 							ipx = ip
 						if ip != ipx:
-							info = Fore.GREEN+"Proxy рабочий."+Style.RESET_ALL
+							info = Fore.GREEN+"Successfully!."+Style.RESET_ALL
 						else:
-							print(Fore.RED+"{} не работает. Введите новый!".format(proxy)+Style.RESET_ALL)
+							print(Fore.RED+"{} does not work! Try another one".format(proxy)+Style.RESET_ALL)
 							updateproxy()
 				except:
-					info = Fore.RED+"\nНекорректно введены данные!"+Style.RESET_ALL
+					info = Fore.RED+"\nInvalid data!"+Style.RESET_ALL
 					proxy = "localhost"
 
 			def generateproxy():
 				global proxy
 				global info
 
-				print(Fore.YELLOW+"Подождите генерируем рабочий прокси.\nОбычно это занимает не больше 30 секунд..."+Style.RESET_ALL)
+				print(Fore.YELLOW+"Genirate new proxy..."+Style.RESET_ALL)
 				url="https://api.proxyscrape.com/?request=displayproxies&proxytype=http&country=RU"
 				req = requests.get(url)
 				ip = requests.get("http://fsystem88.ru/ip").text
@@ -731,7 +738,7 @@ def MAIN():
 				f = open("proxies.txt")
 				proxies = f.read().split()
 				proxy = random.choice(proxies)
-				info = Fore.GREEN+"Рабочий прокси успешно найден!"+Style.RESET_ALL
+				info = Fore.GREEN+"Successful!"+Style.RESET_ALL
 
 			def checkproxy(ip, prox):
 				try:
@@ -763,12 +770,12 @@ def MAIN():
 					email = "{}@gmail.com".format(name)
 
 			def update():
-				a=input("Вы уверены, что хотите обновить? (y/n) ")
+				a=input("Are you sure? (y/n) ")
 				if a=="y":
 					os.system("cd && rm -rf spymer && git clone https://github.com/FSystem88/spymer && cd spymer && sh install.sh")
 					exit()
 				else:
-					print("Отменено")
+					print("The update was cancelled!")
 
 			def onesend():
 				global phone
@@ -781,11 +788,11 @@ def MAIN():
 				clear()
 				logo()
 				print(info)
-				print('Введите телефон ("Enter" - отмена):')
+				print('Enter the number:')
 				phone = input(Fore.BLUE+"spymer > "+Style.RESET_ALL)
 				try:
 					if int(phone):
-						print('Введите количество кругов ("Enter" - отмена):')
+						print('Enter the number of cycles:')
 						count = input(Fore.BLUE+"spymer > "+Style.RESET_ALL)
 						try:
 							if int(count):
@@ -793,7 +800,7 @@ def MAIN():
 								make7phone()
 								iteration = 0
 								addparams()
-								info = '\nТелефон: {}\nКол-во кругов: {}'.format(phone, count)+'\nСпамер запущен.\nЕсли хочешь остановить - нажмите Ctrl+Z.'
+								info = '\nNumber: {}\nCycle: {}'.format(phone, count)+'\nSPAM!.\n Еxit - Ctrl+Z.'
 								clear()
 								logo()
 								print(info)
@@ -805,12 +812,12 @@ def MAIN():
 									addparams()
 									sms()
 									iteration+=1
-									print("{} круг пройден.".format(iteration))
-								info = Fore.BLUE+"\nГотово.\nТелефон: {}\nКол-во кругов: {}".format(phone, iteration)+Style.RESET_ALL
+									print("{} the cycle is complete".format(iteration))
+								info = Fore.BLUE+"\nPhone: {}\nCycle: {}".format(phone, iteration)+Style.RESET_ALL
 						except:
-							info=Fore.RED+"Неверно введено кол-во кругов"+Style.RESET_ALL
+							info=Fore.RED+"ERR! Number of cycles entered incorrectly!"+Style.RESET_ALL
 				except:
-					info=Fore.RED+"Неверно введен номер телефона"+Style.RESET_ALL
+					info=Fore.RED+"ERR! Invalid phone number entered!"+Style.RESET_ALL
 
 			def filesend():
 				global phone
