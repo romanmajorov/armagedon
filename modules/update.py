@@ -1,4 +1,4 @@
 import os, sys
 
-os.system("cd .. && rm -rf armagedon && git clone https://github.com/batyarimskiy/IISUS && cd armagedon && clear")
+os.system("cd .. && rm -rf armagedon && git clone https://github.com/romanmajorov/armagedon && cd armagedon && clear")
 print('Successfully!')
