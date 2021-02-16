@@ -28,9 +28,9 @@ def main():
        main()
     if num_menu == "1":
         russia()
-    if num_menu == "2":
-        batya()
     if num_menu == "3":
+        batya()
+    if num_menu == "2":
         update()
     if num_menu == "4":
         exit()
