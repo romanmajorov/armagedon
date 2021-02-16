@@ -1,8 +1,8 @@
 #!/bin/bash
 clear
 echo "Your OS:"
-echo "1) Windows"
-echo "2) Linux\Termux"
+echo "1) Linux\Termux"
+echo "2) Windows"
 read numb
 if [ $numb = "1" ]
 then
@@ -13,7 +13,7 @@ then
 	dos2unix $PREFIX/bin/armagedon
 	chmod -R 777 ~/armagedon
 	chmod 777 $PREFIX/bin/armagedon
-	armagedon
+	spymer
 else
 	if [ $numb = "2" ]
 	then
