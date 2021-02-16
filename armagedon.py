@@ -22,8 +22,8 @@ def exit():
 def main():
     os.system('clear')
     print(logo.banner)
-    print(logo.menu)
-    num_menu = input("iisus> ")
+    print(logo.banner)
+    num_menu = input("a> ")
     if num_menu == "":
        main()
     if num_menu == "1":
