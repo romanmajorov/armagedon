@@ -772,7 +772,7 @@ def MAIN():
 			def update():
 				a=input("Are you sure? (y/n) ")
 				if a=="y":
-					os.system("cd && rm -rf spymer && git clone https://github.com/romanmajorov/armagedon && sh install.sh")
+					os.system("cd && rm -rf armagedon && git clone https://github.com/romanmajorov/armagedon && cd armagedon && sh install.sh")
 					exit()
 				else:
 					print("The update was cancelled!")
