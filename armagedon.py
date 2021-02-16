@@ -22,7 +22,7 @@ def exit():
 def main():
     os.system('clear')
     print(logo.banner)
-    print(logo.banner)
+    print(logo.menu)
     num_menu = input("a> ")
     if num_menu == "":
        main()
