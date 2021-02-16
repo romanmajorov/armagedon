@@ -9,11 +9,11 @@ then
 	pkg install python
 	pkg install dos2unix
 	pip install requests colorama proxyscrape
-	cp ~/armagedon/bomber.py $PREFIX/bin/spymer
-	dos2unix $PREFIX/bin/spymer
-	chmod -R 777 ~/spymer
-	chmod 777 $PREFIX/bin/spymer
-	spymer
+	cp ~/armagedon/bomber.py $PREFIX/bin/armagedon
+	dos2unix $PREFIX/bin/armagedon
+	chmod -R 777 ~/armagedon
+	chmod 777 $PREFIX/bin/armagedon
+	armagedon
 else
 	if [ $numb = "2" ]
 	then
@@ -24,9 +24,9 @@ else
 		else
 			apt install python3 python3-pip dos2unix
 			pip3 install requests colorama proxyscrape
-			cp ~/spymer/spammer.py $PREFIX/bin/spymer
-			dos2unix $RPEFIX/bin/spymer
-			chmod 777 $RPEFIX/bin/spymer
+			cp ~/armagedon/bomber.py $PREFIX/bin/armagedon
+			dos2unix $RPEFIX/bin/armagedon
+			chmod 777 $RPEFIX/bin/armagedon
 			chmod -R 777 ~/armagedon
 			armagedon
 		fi
@@ -39,9 +39,9 @@ else
 			pip3 install requests
 			pip3 install colorama
 			pip3 install proxyscrape
-			cp ~/spymer/spammer.py /usr/bin/spymer
-			dos2unix /usr/bin/spymer
-			chmod 777 /usr/bin/spymer
+			cp ~/armagedon/bomber.py /usr/bin/armagedon
+			dos2unix /usr/bin/armagedon
+			chmod 777 /usr/bin/armagedon
 			armagedon
 		else
 			echo "Некорректный ввод"
