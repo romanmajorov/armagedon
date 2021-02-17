@@ -20,7 +20,7 @@ menu = """
 - 4) Exit
 """
 
-batya = """
+dmetr = """
 ------------------------------------------------------------------------
    \nDev: Roman Majorov | Telegram: @dev_user
          Press (Enter) to exit the menu...
