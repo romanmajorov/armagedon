@@ -7,7 +7,7 @@ def russia():
     os.system("cd bombers && python3 bomber.py")
 
 def dmetr():
-    print(logo.demtr)
+    print(logo.dmetr)
     input()
     main()
 
