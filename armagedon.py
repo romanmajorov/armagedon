@@ -23,7 +23,7 @@ def main():
     os.system('clear')
     print(logo.banner)
     print(logo.menu)
-    num_menu = input("a> ")
+    num_menu = input("armagedon> ")
     if num_menu == "":
        main()
     if num_menu == "1":
