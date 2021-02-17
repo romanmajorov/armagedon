@@ -6,8 +6,8 @@ from modules import logo
 def russia():
     os.system("cd bombers && python3 bomber.py")
 
-def batya():
-    print(logo.batya)
+def dmetr():
+    print(logo.demtr)
     input()
     main()
 
@@ -29,7 +29,7 @@ def main():
     if num_menu == "1":
         russia()
     if num_menu == "3":
-        batya()
+        dmetr()
     if num_menu == "2":
         update()
     if num_menu == "4":
